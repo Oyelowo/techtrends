@@ -2,14 +2,19 @@ namespace:
   name: production
 
 service:
-  nodePortHttp: 30040 
-  nodePortHttps: 30041
+  port: 7111
 
-replicaCount: 3
+replicaCount: 5
+
+image:
+  pullPolicy: Always
 
 resources:
   requests:
-    cpu: 60m
+    cpu: 350m
+    memory: 128Mi
+  limits:
+    cpu: 500m
     memory: 256Mi
 
 hostPath:
