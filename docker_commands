@@ -1,0 +1,11 @@
+## Docker commands used to build the application 
+`docker build -t oyelowo/techtrends:latest .`
+
+## Docker commands used to run the application
+`docker run -d -p 5112:3111 oyelowo/techtrends:latest`
+
+## Docker commands used to get the application logs
+`docker logs <container-id>`
+
+## Logs from the container running the TechTrends application
+# TODO: paste logs from the Docker container 

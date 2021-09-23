@@ -1,0 +1,16 @@
+namespace:
+  name: production
+
+service:
+  nodePortHttp: 30040 
+  nodePortHttps: 30041
+
+replicaCount: 3
+
+resources:
+  requests:
+    cpu: 60m
+    memory: 256Mi
+
+hostPath:
+  path: /mnt/data/production/database.db

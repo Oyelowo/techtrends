@@ -1,0 +1,16 @@
+namespace:
+  name: staging
+
+service:
+  nodePortHttp: 30030 
+  nodePortHttps: 30031
+
+replicaCount: 2
+
+resources:
+  requests:
+    cpu: 45m
+    memory: 256Mi
+
+hostPath:
+  path: /mnt/data/staging/database.db

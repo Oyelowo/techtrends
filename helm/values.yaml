@@ -1,0 +1,16 @@
+namespace:
+  name: development
+service:
+  nodePortHttp: 30020
+  nodePortHttps: 30021
+image:
+  repository: oyelowo/techtrends
+  tag: "master-dcb4958ae875df40ef59e40c0c24917eb4060c32"
+  pullPolicy: IfNotPresent
+replicaCount: 2
+resources:
+  requests:
+    cpu: 50m
+    memory: 256Mi
+hostPath:
+  path: /mnt/data/development/database.db

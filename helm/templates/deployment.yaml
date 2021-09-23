@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: tech-trends
+    tag: web
+  name: tech-trends-web
+  namespace: {{ .Values.namespace.name }} 
+spec:
+  replicas: {{ .Values.replicaCount }} 
+  selector:
+    matchLabels:
+      app: tech-trends
+      tag: web
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: tech-trends
+        tag: web
+    spec:
+      containers:
+      - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        name: tech-trends
+        resources:
+{{ toYaml .Values.resources | indent 12 }}
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 3111
+          initialDelaySeconds: 30
+          timeoutSeconds: 20
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 3111
+          initialDelaySeconds: 20
+          timeoutSeconds: 20
+        lifecycle:
+          postStart:
+            exec:
+              command: ["python", "init_db.py"]
+        volumeMounts:
+        - mountPath: /app/database.db
+          name: sqlitedb
+      volumes:
+      - name: sqlitedb
+        hostPath:
+          path: {{ .Values.hostPath.path }}
+          type: FileOrCreate
+
