@@ -2,10 +2,9 @@ namespace:
   name: sandbox
 service:
   port: 4111
-
 image:
   repository: oyelowo/techtrends
-  tag: latest
+  tag: master-2d7a582d0ab5228917dad6f70f3b057ebeb2cfad
   pullPolicy: IfNotPresent
 replicaCount: 1
 resources:
