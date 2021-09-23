@@ -4,7 +4,7 @@ service:
   port: 4111
 image:
   repository: oyelowo/techtrends
-  tag: master-2d7a582d0ab5228917dad6f70f3b057ebeb2cfad
+  tag: master-b3550b4b851893336124f3c3f7fff9871de1161c
   pullPolicy: IfNotPresent
 replicaCount: 1
 resources:
