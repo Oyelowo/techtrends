@@ -2,10 +2,25 @@
 `docker build -t oyelowo/techtrends:latest .`
 
 ## Docker commands used to run the application
-`docker run -d -p 5112:3111 oyelowo/techtrends:latest`
+`docker run -d -p 7111:3111 oyelowo/techtrends:latest`
 
+`docker exec -it  <container-id> bash`
+`python init_db.py`
 ## Docker commands used to get the application logs
 `docker logs <container-id>`
 
 ## Logs from the container running the TechTrends application
 # TODO: paste logs from the Docker container 
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://0.0.0.0:3111/ (Press CTRL+C to quit)
+172.17.0.1 - - [23/Sep/2021 18:49:16] "GET / HTTP/1.1" 200 -
+172.17.0.1 - - [23/Sep/2021 18:49:17] "GET / HTTP/1.1" 200 -
+172.17.0.1 - - [23/Sep/2021 18:49:19] "GET /create HTTP/1.1" 200 -
+172.17.0.1 - - [23/Sep/2021 18:49:29] "POST /create HTTP/1.1" 302 -
+172.17.0.1 - - [23/Sep/2021 18:49:29] "GET / HTTP/1.1" 200 -
+172.17.0.1 - - [23/Sep/2021 18:49:33] "GET /about HTTP/1.1" 200 -
+172.17.0.1 - - [23/Sep/2021 18:49:35] "GET / HTTP/1.1" 200 -

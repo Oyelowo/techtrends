@@ -1,10 +1,12 @@
-FROM python:3.9
+FROM python:2.7
 
 WORKDIR /app
 
 COPY ./src .
 
 RUN pip install -r requirements.txt
+
+RUN python init_db.py
 
 EXPOSE 3111
 
