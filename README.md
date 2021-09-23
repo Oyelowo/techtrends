@@ -10,7 +10,7 @@
 4. create host path for volume(developement, staging and production) in the virtual machine
 ```
 function mkfile() { mkdir -p -- "$1" && touch -- "$1"/"$2";}
-mkfile /mnt/data/development database.db
+mkfile /mnt/data/sandbox database.db
 mkfile /mnt/data/staging database.db
 mkfile /mnt/data/production database.db
 ```

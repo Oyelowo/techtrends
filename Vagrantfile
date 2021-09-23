@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
     master.vm.hostname = "master"
     master.vm.network 'private_network', ip: "192.168.50.4"
     master.vm.provider "virtualbox" do |v|
-      v.memory = "3072"
+      v.memory = "4096"
       v.name = "master"
       end
     master.vm.provision "file", source: "./argocd", destination: "$HOME/argocd"

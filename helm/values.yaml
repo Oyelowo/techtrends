@@ -16,4 +16,4 @@ resources:
     cpu: 500m
     memory: 128Mi
 hostPath:
-  path: /mnt/data/development/database.db
+  path: /mnt/data/sandbox/database.db
